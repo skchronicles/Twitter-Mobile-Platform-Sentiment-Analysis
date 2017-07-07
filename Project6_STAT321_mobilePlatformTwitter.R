@@ -1,8 +1,6 @@
 #Skyler Kuhn 
-#Project6: Android/iPhone Twitter code
-#For this project you will use twitter data to determine if two phone platforms have different "like" and "hate" ratings.  
-#The first platform is "Android" and the other is "iPhone".  Complete the following tasks.
-
+#Project: Android/iPhone Twitter code
+#This project uses twitter data to determine if the two major phone platforms (Android and Apple) have different "like" and "hate" ratings.  
 #################################################################################
 
 # *** START Hightlighting text from here: ***
@@ -17,10 +15,10 @@ pacman::p_load(twitteR, sentiment, plyr, ggplot2, wordcloud, RColorBrewer, httpu
 options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
 
 #Must first create a twitter application to get this information
-api_key = "GsYm2mzsuIZbsWxpwZL7k1Yc4"
-api_secret = "ccenJqNP3U8KSWTGndD5TdB6eoYTfza8A5mwHn0aunrYxDqk3O"
-access_token = "4219122813-7WryAjedOdx1QfKQZgSHhNzDQchhGbGuueweDG0"
-access_token_secret = "QJHhv7C1nPewgDBh4uGXjqCMpaP3l1bUrkhg1TRZ7QadD"
+api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+api_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+access_token = "XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+access_token_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 
 setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)   #gaining access to enter twitter
@@ -56,8 +54,8 @@ iphoneBad1 <- 0  #Container to COUNT the bad apple responses
 iphoneGood1 <- 0   #Container to COUNT the good apple responses
 
 #Create  a dictionary 
-GW1 <- c("love", "like", "happy", "great", "excellent", "awesome","positive", "best", "pleased", "perfect") #Goodword Dictionary
-BW1 <- c("hate", "horrible", "stupid", "sucks", "negative", "shitty", "crappy", "worst", "dislike", "resent") #Badword Dictionary
+GW1 <- c("love", "like", "happy", "great", "excellent", "awesome","positive", "best", "pleased", "perfect","sweet", "coolest") #Goodword Dictionary
+BW1 <- c("hate", "horrible", "stupid", "sucks", "negative", "shitty", "crappy", "worst", "dislike", "resent", "shittiest") #Badword Dictionary
 
 #####2.) & 4.)Pull 10,000 tweets for iPhone & Android and determine the number of "like" and "hate" ratings (using looping)
 
@@ -112,7 +110,6 @@ print(iphoneBad1) #iphone badword counter
 
 ###3.)For the android tweets use the R function prop.test() to create
 #    a confidence interval for the proportion who "like" and another confidence interval 
-#prop.test(x=c(androidGood1,androidBad1), n=c(10000, 10000), alternative = "greater") (ignore/delete later)
 prop.test(x=androidGood1, n=10000)
 #    for the proportion who "hate" android.
 prop.test(x=androidBad1, n=10000)
