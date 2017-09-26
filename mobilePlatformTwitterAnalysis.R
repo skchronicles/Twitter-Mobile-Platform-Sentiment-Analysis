@@ -15,10 +15,10 @@ pacman::p_load(twitteR, sentiment, plyr, ggplot2, wordcloud, RColorBrewer, httpu
 options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
 
 #Must first create a twitter application to get this information
-api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
-api_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-access_token = "XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-access_token_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXX"                              # REDACTED
+api_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"             # REDACTED
+access_token = "XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"          # REDACTED
+access_token_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # REDACTED
 
 
 setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)   #gaining access to enter twitter
